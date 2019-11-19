@@ -10,25 +10,10 @@ int grafo[5][5] = {  -1,-1,-1,-1,-1,
                      -1,-1,-1,-1,-1,};
 
 int main(){
-
-/*
-http://lampiao.ic.unicamp.br/maratona/?name=implementa
-https://pt.wikipedia.org/wiki/Lista_de_algoritmos#Algoritmos_de_grafos_2
-https://www.ime.usp.br/~pf/algoritmos_para_grafos/aulas/graphdatastructs.html
--1 = não precisa dessa informção, informação redundate 
-0  = nenhuma ligação
-1  = ligagação enter eixo x e eixo y
-
-exemplo
-  A  B  C 
-A -  -  -
-B 1  -  -
-C 0  1  -
- 
-*/
     int i,j;
     int graficoNULO = 0;
     int graficoCompleto = 0;
+    int vetor[5] = {0,0,0,0,0};
 
     for(i=1;i<5;i++){
         for(j=0;j<=i-1;j++){
@@ -53,9 +38,16 @@ C 0  1  -
 
             if(grafo[i][j] == 1)
                graficoCompleto++;
+
                if(grafo[i+1][j] == 1){
 
                }
+
+            if(tem_ligacao(i,j) == 1){
+               vetor[j]++; 
+            }
+
+
         }
     }
 
@@ -64,7 +56,14 @@ C 0  1  -
         printf("O grafico é nulo !\n");
    
    if(graficoCompleto == 10)
-        printf("O grafico é completo !");
+        printf("O grafico é completo ! ");
+
+
+   printf("\n\n\n");
+
+   for ( i = 0; i < 5; i++){
+      printf(" %3d", vetor[i]);
+   }
         
 }
 
@@ -76,30 +75,22 @@ int tem_ligacao(int v1, int v2){
 }
 
 
-/* vertex pa[1000];
-// int dist[1000];
+/*
+-----------------COMENTARIOS-------------------------------
 
-void GRAPHsptD0( Graph G, vertex s)
-{
-   for (vertex v = 0; v < G->V; ++v)
-      pa[v] = -1;
-   pa[s] = s, dist[s] = 0;
+http://lampiao.ic.unicamp.br/maratona/?name=implementa
+https://pt.wikipedia.org/wiki/Lista_de_algoritmos#Algoritmos_de_grafos_2
+https://www.ime.usp.br/~pf/algoritmos_para_grafos/aulas/graphdatastructs.html
+https://pt.slideshare.net/mcastrosouza/grafos-representao
 
-   while (true) {
-      int min = INFINITY;
-      vertex x, y;
-      for (vertex v = 0; v < G->V; ++v) {
-         if (pa[v] == -1) continue;
-         for (link a = G->adj[v]; a != NULL; a = a->next) {
-            if (pa[a->w] != -1) continue;
-            if (dist[v] + a->cst < min) {
-               min = dist[v] + a->cst;
-               x = v, y = a->w;
-            }
-         }
-      }
-      if (min == INFINITY) // A
-         break; // B
-      pa[y] = x, dist[y] = min;
-   }
-}*/
+-1 = não precisa dessa informção, informação redundate 
+0  = nenhuma ligação
+1  = ligagação enter eixo x e eixo y
+
+exemplo
+  A  B  C 
+A -  -  -
+B 1  -  -
+C 0  1  -
+ 
+*/
