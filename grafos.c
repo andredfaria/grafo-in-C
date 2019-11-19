@@ -1,20 +1,23 @@
-// https://www.ime.usp.br/~pf/algoritmos_para_grafos/
-
 #include <stdio.h>
 
 int main(){
-    int grafo[5][5];
+    int grafo[5][5] = { 5,5,5,5,5,
+                        0,5,5,5,5,
+                        0,0,5,5,5,
+                        0,0,0,5,5,
+                        0,0,0,0,5,};
     int i,j;
-    int graficoNULO;
+    int graficoNULO = 0;
 
-    for(i=0;i<5;i++){
-        for(j=0;j<5;j++){
-           grafo[ i ][ j ] = rand() % 2 ;
+    for(i=1;i<5;i++){
+        for(j=0;j<=i-1;j++){
+
+          /*grafo[ i ][ j ] = rand() % 2 ;*/
         }
     }
 
 
-    prinf("A matriz � ...");
+    printf("A matriz � ...\n\n");
     for(i=0;i<5;i++){
         for(j=0;j<5;j++){
             printf("%d ", grafo[i][j]);
@@ -22,30 +25,28 @@ int main(){
         printf("\n");
     }
 
-     for(i=0;i<5;i++){
-        for(j=0;j<5;j++){
+    for(i=1;i<5;i++){
+        for(j=0;j<=i-1;j++){
             if(grafo[i][j] == 0)
-                graficoNULO++
+                graficoNULO++;
         }
     }
 
 
-    if(graficoNULO == 25)
+    if(graficoNULO == 10)
         printf("O grafico � nulo !");
 
-    
+
 }
 
-
-
-// vertex pa[1000];
+/* vertex pa[1000];
 // int dist[1000];
 
-void GRAPHsptD0( Graph G, vertex s) 
-{ 
-   for (vertex v = 0; v < G->V; ++v) 
+void GRAPHsptD0( Graph G, vertex s)
+{
+   for (vertex v = 0; v < G->V; ++v)
       pa[v] = -1;
-   pa[s] = s, dist[s] = 0; 
+   pa[s] = s, dist[s] = 0;
 
    while (true) {
       int min = INFINITY;
@@ -60,8 +61,8 @@ void GRAPHsptD0( Graph G, vertex s)
             }
          }
       }
-      if (min == INFINITY) // A 
+      if (min == INFINITY) // A
          break; // B
       pa[y] = x, dist[y] = min;
    }
-}
+}*/
