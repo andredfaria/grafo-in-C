@@ -7,6 +7,9 @@ int main(){
                         -1,-1,-1,-1,-1,
                         -1,-1,-1,-1,-1,};
 /*
+http://lampiao.ic.unicamp.br/maratona/?name=implementa
+https://pt.wikipedia.org/wiki/Lista_de_algoritmos#Algoritmos_de_grafos_2
+https://www.ime.usp.br/~pf/algoritmos_para_grafos/aulas/graphdatastructs.html
 -1 = não precisa dessa informção, informação redundate 
 0  = nenhuma ligação
 1  = ligagação enter eixo x e eixo y
@@ -44,7 +47,10 @@ C 0  1  -
                 graficoNULO++;
 
             if(grafo[i][j] == 1)
-                graficoCompleto++;
+               graficoCompleto++;
+               if(grafo[i+1][j] == 1){
+
+               }
         }
     }
 
