@@ -1,23 +1,36 @@
 #include <stdio.h>
 
 int main(){
-    int grafo[5][5] = { 5,5,5,5,5,
-                        0,5,5,5,5,
-                        0,0,5,5,5,
-                        0,0,0,5,5,
-                        0,0,0,0,5,};
+    int grafo[5][5] = { -1,-1,-1,-1,-1,
+                        -1,-1,-1,-1,-1,
+                        -1,-1,-1,-1,-1,
+                        -1,-1,-1,-1,-1,
+                        -1,-1,-1,-1,-1,};
+/*
+-1 = não precisa dessa informção, informação redundate 
+0  = nenhuma ligação
+1  = ligagação enter eixo x e eixo y
+
+exemplo
+  A  B  C 
+A -  -  -
+B 1  -  -
+C 0  1  -
+ 
+*/
     int i,j;
     int graficoNULO = 0;
+    int graficoCompleto = 0;
 
     for(i=1;i<5;i++){
         for(j=0;j<=i-1;j++){
 
-          /*grafo[ i ][ j ] = rand() % 2 ;*/
+          grafo[ i ][ j ] = rand() % 2 ;
         }
     }
 
 
-    printf("A matriz � ...\n\n");
+    printf("A matriz ...\n\n");
     for(i=0;i<5;i++){
         for(j=0;j<5;j++){
             printf("%d ", grafo[i][j]);
@@ -29,12 +42,18 @@ int main(){
         for(j=0;j<=i-1;j++){
             if(grafo[i][j] == 0)
                 graficoNULO++;
+
+            if(grafo[i][j] == 1)
+                graficoCompleto++;
         }
     }
 
 
     if(graficoNULO == 10)
-        printf("O grafico � nulo !");
+        printf("O grafico é nulo !\n");
+   
+   if(graficoCompleto == 10)
+        printf("O grafico é completo !");
 
 
 }
