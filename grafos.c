@@ -1,11 +1,16 @@
 #include <stdio.h>
+#include <stdlib.h>
+
+int tem_ligacao(int v1, int v2);
+
+int grafo[5][5] = {  -1,-1,-1,-1,-1,
+                     -1,-1,-1,-1,-1,
+                     -1,-1,-1,-1,-1,
+                     -1,-1,-1,-1,-1,
+                     -1,-1,-1,-1,-1,};
 
 int main(){
-    int grafo[5][5] = { -1,-1,-1,-1,-1,
-                        -1,-1,-1,-1,-1,
-                        -1,-1,-1,-1,-1,
-                        -1,-1,-1,-1,-1,
-                        -1,-1,-1,-1,-1,};
+
 /*
 http://lampiao.ic.unicamp.br/maratona/?name=implementa
 https://pt.wikipedia.org/wiki/Lista_de_algoritmos#Algoritmos_de_grafos_2
@@ -36,7 +41,7 @@ C 0  1  -
     printf("A matriz ...\n\n");
     for(i=0;i<5;i++){
         for(j=0;j<5;j++){
-            printf("%d ", grafo[i][j]);
+            printf("%3d ", grafo[i][j]);
         }
         printf("\n");
     }
@@ -60,9 +65,16 @@ C 0  1  -
    
    if(graficoCompleto == 10)
         printf("O grafico é completo !");
-
-
+        
 }
+
+int tem_ligacao(int v1, int v2){
+   if(grafo[v1][v2])
+      return 1;
+
+   return 0;
+}
+
 
 /* vertex pa[1000];
 // int dist[1000];
