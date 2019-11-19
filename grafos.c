@@ -46,8 +46,6 @@ int main(){
             if(tem_ligacao(i,j) == 1){
                vetor[j]++; 
             }
-
-
         }
     }
 
