@@ -19,6 +19,7 @@ int main(){
     int vetor[5]        = {0,0,0,0,0};
     int vetoraux[5]     = {0,0,0,0,0};
     int maiorGrau = 0;
+    int maiorGrauD = 0;
     
     /*gera matriz aleatoria com 1 ou 0 1=ligação | 0= sem ligação */
     srand(time(NULL));
@@ -67,7 +68,7 @@ int main(){
 
    printf("\n");
 
-   for ( i = 1; i < 5; i++){
+   for ( i = 0; i < 5; i++){
       if (vetor[i]> vetor[i+1])
         maiorGrau = i;
 
@@ -82,7 +83,7 @@ int main(){
 
 ////////////////////////////////////////////////////////////////////////////////////
     printf("\nO Grafo tem %d Arestas ", graficoCompleto);
-
+    
     if(vetor[0] ==  vetor[1] && vetor[2] ==  vetor[4] && vetor[2] ==  vetor[0])
         printf("\nO Grafo é regular");
         
