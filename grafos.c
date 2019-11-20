@@ -11,9 +11,10 @@ int grafo[5][5] = {  -1,-1,-1,-1,-1,
 
 int main(){
     int i,j;
-    int graficoNULO = 0;
+    int graficoNULO     = 0;
     int graficoCompleto = 0;
-    int vetor[5] = {0,0,0,0,0};
+    int vetor[5]        = {0,0,0,0,0};
+    int vetoraux[5]     = {0,0,0,0,0};
 
     for(i=1;i<5;i++){
         for(j=0;j<=i-1;j++){
@@ -40,15 +41,17 @@ int main(){
                graficoCompleto++;
 
                if(grafo[i+1][j] == 1){
-
+                vetoraux[i]++;
                }
 
             if(tem_ligacao(i,j) == 1){
-               vetor[j]++; 
+               
+
             }
         }
     }
 
+    printf("\nO Grafo tem %d Arestas ", graficoCompleto);
 
     if(graficoNULO == 10)
         printf("O grafico é nulo !\n");
@@ -62,7 +65,11 @@ int main(){
    for ( i = 0; i < 5; i++){
       printf(" %3d", vetor[i]);
    }
-        
+   printf("\n");
+   for ( i = 0; i < 5; i++){
+      printf(" %3d", vetoraux[i]);
+   }
+
 }
 
 int tem_ligacao(int v1, int v2){
