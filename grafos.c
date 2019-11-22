@@ -19,12 +19,10 @@ int main(){
     int vetor[5]        = {0,0,0,0,0};
     int vetoraux[5]     = {0,0,0,0,0};
     int maiorGrau = 0;
-<<<<<<< HEAD
     int indice;
     int nulo;
-=======
     int maiorGrauD = 0;
->>>>>>> 28a76f8c08fe95de2899b8cfefece3f2f1a56d00
+    int maiorGrauD = 0;
     
     /*gera matriz aleatoria com 1 ou 0 1=ligação | 0= sem ligação */
     srand(time(NULL));
@@ -62,13 +60,8 @@ int main(){
 
    printf("\n");
 
-<<<<<<< HEAD
-   for ( i = 1; i < 5; i++){
-      if (vetor[i] > vetor[i+1])
-=======
    for ( i = 0; i < 5; i++){
       if (vetor[i]> vetor[i+1])
->>>>>>> 28a76f8c08fe95de2899b8cfefece3f2f1a56d00
         maiorGrau = i;
 
       printf(" ligações do %i vertice = %3d\n", i, vetor[i-1]);
