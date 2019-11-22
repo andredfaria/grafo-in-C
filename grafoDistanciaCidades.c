@@ -1,6 +1,10 @@
 #include <stdio.h>
 #include <stdlib.h>
 
+char getCidade(int c);
+char CidadeP[30];
+char CidadeS[30];
+
 int main(){
     int i,j;
     int c1, c2;
@@ -42,11 +46,57 @@ int main(){
 
 
         printf("Digite para saber a distancia entre duas cidades e os caminho mais curto \n\n");
-        printf("0 Muzambinho\n 1  Botelhos\n 2  São joão da Boa Vista\n 3  Andradas\n 4  Espirito Santo do pinhal\n 5  Poços de Caldas\n 6  São José do Rio Pardo\n 7  Machado\n 8  Campestre \n 9 Pouso Alegre");
+        printf(" 0 Muzambinho\n 1  Botelhos\n 2  São joão da Boa Vista\n 3  Andradas\n 4  Espirito Santo do pinhal\n 5  Poços de Caldas\n 6  São José do Rio Pardo\n 7  Machado\n 8  Campestre \n 9 Pouso Alegre");
         printf("\n\nPrimeira cidade\n");    
         scanf(" %d", &c1);
         printf("Segunda cidade\n");
         scanf(" %d", &c2);
+        
 
         printf("%d %d",  c1, c2);
+        char a = getCidade(c1);
+        printf("\n A distantica entre %s é de %d", a , distancias[c1][c2]);
+}
+
+char getCidade(int c){
+
+    char Cidade[30];
+        switch (c)
+        {
+        case 0: 
+        Cidade[30] = (char) "Muzambinho";
+    break;
+        case 1:
+        Cidade[30] = (char) "Botelhos";
+    break;
+        case 2:
+        Cidade[30] = (char) "São joão da Boa Vista";
+    break;
+        case 3:
+        Cidade[30] = (char) "Andradas";
+    break;
+        case 4:
+        Cidade[30] = (char) "Espirito Santo do pinhal";
+    break;
+        case 5:
+        Cidade[30] = (char) "Poços de Caldas";
+    break;
+        case 6:
+        Cidade[30] = (char) "São José do Rio Pardo";
+    break;
+        case 7:
+        Cidade[30] = (char) "Machado";
+    break;
+        case 8:
+        Cidade[30] = (char) "Campestre ";
+    break;
+        case 9:
+        Cidade[30] = (char) "Pouso Alegre";    
+    break;
+        
+        default:
+            break;   
+
+    return Cidade;
+    }
 }
