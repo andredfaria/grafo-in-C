@@ -21,8 +21,6 @@ int main(){
     int maiorGrau = 0;
     int indice;
     int nulo;
-    int maiorGrauD = 0;
-    int maiorGrauD = 0;
     
     /*gera matriz aleatoria com 1 ou 0 1=ligação | 0= sem ligação */
     srand(time(NULL));
@@ -46,14 +44,25 @@ int main(){
 
     for(i=1;i<5;i++){
         for(j=0;j<=i-1;j++){
+
+            //printf("%d - %d\n", i, j);
+
             if(grafo[i][j] == 0)
                 graficoNULO++;
 
             if(grafo[i][j] == 1)
                graficoCompleto++;
-               
-            if(tem_ligacao(i, j) == 1)
+
+            /*   
+            if(tem_ligacao(i, j) == 1){
+                printf("tem\n");
                 vetor[j]++;   
+            }
+
+            if(nao_tem_ligacao(i, j) == 1){
+                printf("naoTem\n");
+                vetor[j]++;   
+            }*/
 
         }
     }
@@ -61,15 +70,10 @@ int main(){
    printf("\n");
 
    for ( i = 0; i < 5; i++){
-      if (vetor[i]> vetor[i+1])
-        maiorGrau = i;
-
-      printf(" ligações do %i vertice = %3d\n", i, vetor[i-1]);
-
-      if(vetor[i-1] == 0){
-        indice = i-1;
-        for(i=0;i<5;i++){
-
+      if (vetor[i]> vetor[i+1])        
+        if(vetor[i-1] == 0){
+          indice = i-1;
+          for(i=0;i<5;i++){
            if(grafo[indice][i] == 0)
              nulo++;
 
@@ -91,7 +95,7 @@ int main(){
         
 
     printf("\nO Grafo tem grau de %d", graficoCompleto);
-    printf("\nO Maior grau é %d que é o  %d", vetor[maiorGrau], maiorGrau);
+    printf("\nO Maior grau é %d que é o  %d \n", vetor[maiorGrau], maiorGrau);
 
     if(graficoNULO == 10)
         printf("O grafico é nulo !\n");
@@ -103,6 +107,13 @@ int main(){
 
 int tem_ligacao(int v1, int v2){
    if(grafo[v1][v2] == 1)
+      return 1;
+
+   return 0;
+}
+
+int nao_tem_ligacao(int v1, int v2){
+   if(grafo[v1][v2] == 0)
       return 1;
 
    return 0;

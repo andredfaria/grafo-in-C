@@ -8,6 +8,9 @@ char CidadeS[30];
 int main(){
     int i,j;
     int c1, c2;
+    char Cidade1[30];
+    char Cidade2[30];
+
     int distancias[10][10] = {
                                 0, 44,121,116,142, 80, 74,107, 77,163,
                                44,  0, 75, 79, 98, 37, 81, 77, 35,121,
@@ -42,8 +45,7 @@ int main(){
         }
         printf("\n");        
         
-    }
-
+    }   
 
         printf("Digite para saber a distancia entre duas cidades e os caminho mais curto \n\n");
         printf(" 0 Muzambinho\n 1  Botelhos\n 2  São joão da Boa Vista\n 3  Andradas\n 4  Espirito Santo do pinhal\n 5  Poços de Caldas\n 6  São José do Rio Pardo\n 7  Machado\n 8  Campestre \n 9 Pouso Alegre");
@@ -52,51 +54,79 @@ int main(){
         printf("Segunda cidade\n");
         scanf(" %d", &c2);
         
-
-        printf("%d %d",  c1, c2);
-        char a = getCidade(c1);
-        printf("\n A distantica entre %s é de %d", a , distancias[c1][c2]);
-}
-
-char getCidade(int c){
-
-    char Cidade[30];
-        switch (c)
+            switch (c1)
         {
         case 0: 
-        Cidade[30] = (char) "Muzambinho";
+        strcpy(Cidade1, "Muzambinho");
     break;
         case 1:
-        Cidade[30] = (char) "Botelhos";
+        strcpy(Cidade1,"Botelhos");
     break;
         case 2:
-        Cidade[30] = (char) "São joão da Boa Vista";
+        strcpy(Cidade1,"São joão da Boa Vista");
     break;
         case 3:
-        Cidade[30] = (char) "Andradas";
+        strcpy(Cidade1,"Andradas");
     break;
         case 4:
-        Cidade[30] = (char) "Espirito Santo do pinhal";
+        strcpy(Cidade1,"Espirito Santo do pinhal");
     break;
         case 5:
-        Cidade[30] = (char) "Poços de Caldas";
+        strcpy(Cidade1,"Poços de Caldas");
     break;
         case 6:
-        Cidade[30] = (char) "São José do Rio Pardo";
+        strcpy(Cidade1,"São José do Rio Pardo");
     break;
         case 7:
-        Cidade[30] = (char) "Machado";
+        strcpy(Cidade1,"Machado");
     break;
         case 8:
-        Cidade[30] = (char) "Campestre ";
+        strcpy(Cidade1,"Campestre ");
     break;
         case 9:
-        Cidade[30] = (char) "Pouso Alegre";    
+        strcpy(Cidade1,"Pouso Alegre");
     break;
         
-        default:
-            break;   
-
-    return Cidade;
     }
+
+    switch (c2)
+        {
+        case 0: 
+        strcpy(Cidade2, "Muzambinho");
+    break;
+        case 1:
+        strcpy(Cidade2,"Botelhos");
+    break;
+        case 2:
+        strcpy(Cidade2,"São joão da Boa Vista");
+    break;
+        case 3:
+        strcpy(Cidade2,"Andradas");
+    break;
+        case 4:
+        strcpy(Cidade2,"Espirito Santo do pinhal");
+    break;
+        case 5:
+        strcpy(Cidade2,"Poços de Caldas");
+    break;
+        case 6:
+        strcpy(Cidade2,"São José do Rio Pardo");
+    break;
+        case 7:
+        strcpy(Cidade2,"Machado");
+    break;
+        case 8:
+        strcpy(Cidade2,"Campestre ");
+    break;
+        case 9:
+        strcpy(Cidade2,"Pouso Alegre");
+    break;
+        
+    }
+
+
+
+        printf("%d %d",  c1, c2);
+        
+        printf("\n A distantica entre %s a %s é de %d", Cidade1 , Cidade2, distancias[c1][c2]);
 }
