@@ -20,6 +20,7 @@ int main(){
     int indice = 0;
     int ligacao = 0;
     int n = 0;
+    char letras[] = {"ABCDE"};
     
     /*gera matriz aleatoria com 1 ou 0 1=ligação | 0= sem ligação */
     srand(time(NULL));
@@ -31,15 +32,22 @@ int main(){
 
     /*mostra a matriz*/
     printf("A matriz ...\n\n");
+
     for(i=0;i<5;i++){
+      printf("%c", letras[i]);
+      
         for(j=0;j<5;j++){
             /*replica um lado da matriz para o outro lado da matriz*/
             grafo[i][j] = grafo[j][i];
-
             printf("%3d ", grafo[i][j]);
         }
         printf("\n");
     }
+
+    for (i=0;i<5;i++){
+      printf(" %3c", letras[i]);
+    }
+    
 
     for(i=1;i<5;i++){
         for(j=0;j<=i-1;j++){
@@ -67,42 +75,39 @@ int main(){
         }
     }
 
-   printf("\n");
+  ;
 
   j=1;
   for (i = 0; i < 5; i++){ 
-      grafo[i][j]
+      if(grafo[i][j] == 1)
+        
 
 
       if(vetor[i] > maiorGrau){
         maiorGrau = vetor[i];
         indice = i;
-      }
-
-    printf("%d", vetor[i]);
+      }    
   }
-  
-
-   printf("\n\n");
-
+ printf("\n---------------------");
 ////////////////////////////////////////////////////////////////////////////////////
-    printf("\nO Grafo tem %d Arestas ", graficoCompleto);
+    printf("\nO Grafo tem %d Arestas \n", graficoCompleto);
     printf("Suas ligações são:\n");
     for(i=1;i<5;i++){
         for(j=0;j<=i-1;j++){
           if(grafo[i][j] == 1)
-            printf(" a vertice vai do %d ao %d\n", i, j);
+            printf(" de %c a %c\n", letras[i], letras[j]);
 
       }
     }
+    printf("---------------------");
     printf("\nO Grafo tem %d Arestas ", graficoCompleto);
     
     if(vetor[0] ==  vetor[1] && vetor[2] ==  vetor[4] && vetor[2] ==  vetor[0])
         printf("\nO Grafo é regular");
         
 
-    printf("\nO Grafo tem grau %d\n", graficoCompleto);
-    printf("\nO Maior grau é %d que é o  %d \n", maiorGrau, indice);
+    printf("\nO Grafo tem grau %d", graficoCompleto);
+    printf("\nO Maior grau é %d que é o  %c \n", maiorGrau, letras[indice]);
 
     if(graficoNULO == 10)
         printf("O grafico é nulo !\n");
