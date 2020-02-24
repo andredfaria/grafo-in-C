@@ -186,11 +186,9 @@ int ValorNo(struct Elemento *no)
 // Método principal
 int main()
 {
-    printf("**********************************************************\n");
-    printf("* CALCULO DE EXPRESSOES MATEMATICAS COM ARVORES BINARIAS *\n");
-    printf("* UNICESUMAR - ESOFT - ESTRUTURAS DE DADOS II            *\n");
-    printf("* ALUNO: GUIONARDO FURLAN                   RA:1650466-5 *\n");
-    printf("**********************************************************\n");
+    // printf("**********************************************************\n");
+    // printf("* CALCULO DE EXPRESSOES MATEMATICAS COM ARVORES BINARIAS *\n");    
+    // printf("**********************************************************\n");
     MontaArvore();
     printf("# Calculando...\n\n");
     int Calculo = ValorNo(Raiz);
